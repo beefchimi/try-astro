@@ -1,0 +1,42 @@
+---
+import Page from '../../layouts/Page.astro';
+
+const pageTitle = 'Tag Index';
+
+const allPosts = await Astro.glob('../posts/*.md');
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+---
+
+<Page title={pageTitle}>
+  <ul class="Tags">
+    {
+      tags.map((tag) => (
+        <li class="Tag">
+          <a href={`/tags/${tag}`} class="Link">
+            {tag}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Page>
+
+<style>
+  .Tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .Tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1.15em;
+    background-color: #f8fcfd;
+  }
+
+  .Link {
+    color: #00539f;
+  }
+</style>

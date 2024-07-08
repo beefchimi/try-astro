@@ -1,0 +1,74 @@
+<nav class="Navigation">
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/about">About</a>
+    </li>
+    <li>
+      <a href="/blog">Blog</a>
+    </li>
+    <li>
+      <a href="/tags">Tags</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .Navigation {
+    display: none;
+  }
+
+  .expanded {
+    display: unset;
+  }
+
+  ul {
+    margin: 0;
+    top: 5rem;
+    left: 48px;
+    width: 100%;
+    background-color: #ff9776;
+  }
+
+  li {
+    display: block;
+    text-align: center;
+  }
+
+  a {
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  a:hover,
+  a:focus {
+    background-color: #ff9776;
+  }
+
+  @media screen and (min-width: 636px) {
+    .Navigation {
+      display: block;
+    }
+
+    ul {
+      position: static;
+      margin-left: 5em;
+      width: auto;
+      background: none;
+    }
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      padding: 15px 20px;
+    }
+  }
+</style>
