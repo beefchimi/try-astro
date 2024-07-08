@@ -1,0 +1,51 @@
+{
+  "name": "try-astro",
+  "version": "0.0.1",
+  "description": "Astro started project",
+  "author": "Curtis Dulmage",
+  "license": "ISC",
+  "keywords": [
+    "typescript",
+    "astro"
+  ],
+  "homepage": "https://github.com/beefchimi/try-astro#readme",
+  "bugs": {
+    "url": "https://github.com/beefchimi/try-astro/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beefchimi/try-astro.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22.3.0",
+    "npm": ">=10.8.0"
+  },
+  "scripts": {
+    "clean": "rm -rf dist && rm -rf node_modules/.cache && rm -rf node_modules/.vite",
+    "nuke": "npm run clean && rm -rf node_modules && rm -rf package-lock.json && npm cache clean --force",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "test": "echo 'There is no testing suite set up for this app.'"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "astro": "^4.11.5",
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^7.15.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-astro": "^1.2.2",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "prettier": "^3.3.2",
+    "prettier-plugin-astro": "^0.14.0"
+  }
+}
