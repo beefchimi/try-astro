@@ -32,6 +32,7 @@
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
+    "check": "astro check",
     "test": "echo 'There is no testing suite set up for this app.'"
   },
   "dependencies": {
