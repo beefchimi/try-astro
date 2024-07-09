@@ -1,6 +1,39 @@
+:root {
+  --color-primary: rgb(0, 0, 0, 1);
+  --color-secondary: rgb(255, 255, 255, 1);
+  --color-background: #f1f5f9;
+
+  --rgb-accent: 136, 58, 234;
+  --rgb-accent-light: 224, 204, 250;
+  --rgb-accent-dark: 48, 10, 100;
+
+  --color-accent: rgb(var(--rgb-accent), 1);
+  --color-accent-light: rgb(var(--rgb-accent-light), 1);
+  --color-accent-dark: rgb(var(--rgb-accent-dark), 1);
+
+  --gradient-accent: linear-gradient(
+    45deg,
+    rgb(var(--rgb-accent), 1),
+    rgb(var(--rgb-accent-light), 1) 20%,
+    white 60%
+  );
+
+  --icon-size: 2rem;
+}
+
 ::selection {
-  color: black;
-  background-color: yellow;
+  color: var(--color-secondary);
+  background-color: rgb(var(--rgb-accent), 1);
+}
+
+html {
+  background-color: var(--color-background);
+}
+
+html.dark-mode {
+  --color-primary: rgb(255, 255, 255, 1);
+  --color-secondary: rgb(0, 0, 0, 1);
+  --color-background: #13151a;
 }
 
 html,
@@ -8,36 +41,49 @@ body {
   height: 100%;
 }
 
-html {
-  background-color: #f1f5f9;
-  font-family: sans-serif;
-}
-
-body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80rem;
-  padding: 1rem;
-  line-height: 1.5;
-}
-
 /* --- Typography --- */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
 h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
+  font-size: 2.6rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1.4rem;
+  font-weight: 400;
 }
 
 /* --- Components --- */
 
 main {
-  margin: auto;
+  margin: 0 auto;
   padding: 1rem;
-  width: 800px;
-  max-width: calc(100% - 2rem);
-  color: white;
-  font-size: 20px;
-  line-height: 1.6;
+  width: 100%;
+  max-width: 80rem;
 }
 
 .icon-wrapper {

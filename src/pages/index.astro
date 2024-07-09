@@ -3,6 +3,7 @@ import Page from '../layouts/Page.astro';
 
 import AstroLogo from '../components/AstroLogo.astro';
 import Card from '../components/Card.astro';
+import Greeting from '../components/Greeting.tsx';
 
 const pageTitle = 'Welcome to Astro';
 ---
@@ -14,6 +15,8 @@ const pageTitle = 'Welcome to Astro';
     </div>
 
     <h1>Welcome to <span class="text-gradient">Astro</span></h1>
+
+    <Greeting client:load messages={['Hej', 'Hallo', 'Hola', 'Habari']} />
 
     <p class="Instructions">
       To get started, open the directory <code>src/pages</code> in your project.<br
@@ -69,7 +72,7 @@ const pageTitle = 'Welcome to Astro';
   }
 
   .text-gradient {
-    background-image: var(--accent-gradient);
+    background-image: var(--gradient-accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 400%;
@@ -78,26 +81,26 @@ const pageTitle = 'Welcome to Astro';
 
   .Instructions {
     margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
     padding: 1.5rem;
+    border: 1px solid rgb(var(--rgb-accent-light), 25%);
     border-radius: 8px;
+    background: linear-gradient(
+      rgb(var(--rgb-accent-dark), 66%),
+      rgb(var(--rgb-accent-dark), 33%)
+    );
   }
 
   .Instructions code {
+    padding: 0.3em 0.4em;
+    border-radius: 4px;
     font-size: 0.8em;
     font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
+    color: var(--color-accent-light);
+    background: rgb(var(--rgb-accent-light), 12%);
   }
 
   .Instructions strong {
-    color: rgb(var(--accent-light));
+    color: var(--color-accent-light);
   }
 
   .LinkList {
